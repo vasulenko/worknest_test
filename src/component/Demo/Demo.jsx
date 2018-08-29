@@ -40,7 +40,7 @@ class Demo extends Component {
     jsonLogic.add_operation("var", varFunction.bind(this));
     this.state = {
       value: props.value,
-      data: JSON.stringify(props.data),
+      data: props.data,
       result: 'Not Evaluated',
     };
   }
@@ -62,7 +62,7 @@ class Demo extends Component {
           {title}
         </h3>
         <ReactJsonLogic
-          data={data}
+          data={JSON.stringify(data)}
           value={value}
           onChange={this.onFieldValueChange}
         />
@@ -81,7 +81,7 @@ class Demo extends Component {
         <hr/>
         <h4>Data for Accessor Fields <small>(Must be JSON)</small></h4>
         <Editor
-          value={JSON.parse(data)}
+          value={data}
           onChange={this.onAccessorDataChange}
         />
         <button disabled={Object.keys(value).length === 0} onClick={this.onEvaluate}>

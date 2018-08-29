@@ -19,7 +19,7 @@ const Editor = ({ value = {}, onChange = () => {} }) => (
       theme="github"
       onChange={onChange}
       value={JSON.stringify(value)}
-      name={"Test1"}
+      name={Math.floor(Math.random() * 1000).toString()}
       editorProps={{ $blockScrolling: 'Infinity' }}
       tabSize={2}
       width="100%"

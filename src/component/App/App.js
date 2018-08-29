@@ -9,7 +9,7 @@ class App extends Component {
       <div>
         <Header/>
         <div className={'main'}>
-          <Demo title={'Test'} data={{a: 1, c: {f: 12}}} value={{"===":[1,{"var":["c.f",1]}]}}/>
+          <Demo title={'Test'} data={{a: 1, c: {f: 12, m: 10}, b: 2, d: 12, test: 0 }} value={{"===":[1,{"var":["c.f",1]}]}}/>
         </div>
       </div>
     );
