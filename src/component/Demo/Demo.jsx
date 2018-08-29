@@ -23,11 +23,11 @@ const varFunction = function (a, b) {
   const {data} = this.state;
   const not_found = (b === undefined) ? null : b;
   const sub_props = String(a).split(".");
-  let result = Object.assign({},JSON.parse(data));
-  for(let i = 0; i < sub_props.length; i++) {
+  let result = Object.assign({}, data);
+  for (let i = 0; i < sub_props.length; i++) {
     // Descending into data
     result = result[sub_props[i]];
-    if(result === undefined) {
+    if (result === undefined) {
       return b ? b : not_found;
     }
   }
@@ -50,7 +50,7 @@ class Demo extends Component {
   onAccessorDataChange = data => this.setState({data});
 
   onEvaluate = () => this.setState({
-    result: jsonLogic.apply(this.state.value, JSON.parse(this.state.data)),
+    result: jsonLogic.apply(this.state.value, this.state.data),
   });
 
   render() {
